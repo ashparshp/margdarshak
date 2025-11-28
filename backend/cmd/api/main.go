@@ -22,15 +22,10 @@ func main() {
 
 	app.Domain = "example.com"
 
-	// // set up routes
-	// http.HandleFunc("/", app.Hello)
-
 	// log server start
 	log.Printf("Starting server on port %d", port)
 
 	// start api server
-	// err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
-
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), app.routes())
 
 	if err != nil {
